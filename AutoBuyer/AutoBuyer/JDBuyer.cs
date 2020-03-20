@@ -9,16 +9,11 @@ namespace AutoBuyer
         public void s() 
         {
             IWebDriver driver = new EdgeDriver("/path/to/msedgedriver.exe");
-            driver.Get("");
+            // driver.Get("");
             driver.Navigate().GoToUrl(@"https://www.jd.com/");
 
 
             // PageFactory.newInstance(AccountPage.class);
         }
-    }
-
-    public class LoginPage : LoadableComponent
-    { 
-    
     }
 }

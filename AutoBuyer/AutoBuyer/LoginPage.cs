@@ -30,24 +30,24 @@ namespace AutoBuyer.JD
                 gsp = googleSearchPage;
             }
 
-            public GSPFluentInterface clickSearchButton()
-            {
-                gsp.searchButton.click();
-                return this;
-            }
+            //public GSPFluentInterface clickSearchButton()
+            //{
+            //    gsp.searchButton.click();
+            //    return this;
+            //}
 
-            public GSPFluentInterface setSearchString(String sstr)
-            {
-                clearAndType(gsp.searchField, sstr);
-                return this;
-            }
+            //public GSPFluentInterface setSearchString(String sstr)
+            //{
+            //    clearAndType(gsp.searchField, sstr);
+            //    return this;
+            //}
         }
 
-        public LoginPage(IWebDriver driver)
-        {
-            gspfi = new GSPFluentInterface(this);
-            this.get(); // If load() fails, calls isLoaded() until page is finished loading
-            PageFactory.initElements(driver, this); // Initialize WebElements on page
-        }
+        //public LoginPage(IWebDriver driver)
+        //{
+        //    gspfi = new GSPFluentInterface(this);
+        //    this.get(); // If load() fails, calls isLoaded() until page is finished loading
+        //    PageFactory.initElements(driver, this); // Initialize WebElements on page
+        //}
     }
 }
