@@ -34,18 +34,25 @@ namespace AutoBuyer
 
         public void ToClick()
         {
-            driver.FindElement(By.XPath(@"//*[@id='J_babelOptPage']/div/div[5]/div/div/a")).Click();
+            driver.FindElement(By.XPath(@"//*[@id='J_babelOptPage']/div/div[7]/div/div/a")).Click();
         }
 
         public void sss2()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(1));
-            IWebElement webElement = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.ClassName("close-button")));
-            if (webElement.Displayed == true )
-            {
-                driver.FindElement(By.ClassName("close-button")).Click();
-            }
 
+            try
+            {
+                IWebElement webElement = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.ClassName("close-button")));
+                if (webElement.Displayed == true)
+                {
+                    driver.FindElement(By.ClassName("close-button")).Click();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         public void Close()
