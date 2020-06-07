@@ -24,7 +24,7 @@ namespace AutoBuyer
             IJobDetail job = JobBuilder.Create<JDBuyerJob>().WithIdentity("job1", "group1").Build();
             ITrigger trigger = TriggerBuilder.Create()
                 .WithIdentity("trigger1", "group1")
-                .WithCronSchedule("58 59 09 * * ? *")
+                .WithCronSchedule("58 59 23 * * ? *")
                 //.WithCronSchedule("00 17 23 * * ? *")
                 .Build();
 
