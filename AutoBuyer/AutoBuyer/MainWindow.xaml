@@ -7,8 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="259,149,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="Button2" HorizontalAlignment="Left" Margin="332,149,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <Button Content="66666" HorizontalAlignment="Left" Margin="259,192,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--<Menu Background="#dddddd" FontFamily="黑体" FontSize="14">
+            <MenuItem Header="任务">
+                <MenuItem Header="新建任务">
+                </MenuItem>
+            </MenuItem>
+        </Menu>-->
+        <Button Grid.Row="1" Height="50" Width="100" Content="15" Click="Button_Click_3Async"></Button>
+        <Button Grid.Row="0" Height="50" Width="100" Content="login" Click="Button_Click_4"></Button>
     </Grid>
 </Window>

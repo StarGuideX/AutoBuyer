@@ -16,10 +16,10 @@ namespace AutoBuyer
         public void Login()
         {
 
-            var service = EdgeDriverService.CreateDefaultService(@"C:\Users\Stone\Documents\GitHub\AutoBuyer\AutoBuyer\AutoBuyer\bin\Debug\netcoreapp3.1\DriversApplication", "msedgedriver.exe");
+            //var service = EdgeDriverService.CreateDefaultService(@"C:\Users\Stone\Documents\GitHub\AutoBuyer\AutoBuyer\AutoBuyer\bin\Debug\netcoreapp3.1\DriversApplication", "msedgedriver.exe");
 
-            string s = AppDomain.CurrentDomain.BaseDirectory + @"DriversApplication\msedgedriver.exe";
-            driver = new EdgeDriver(service);
+            //string s = AppDomain.CurrentDomain.BaseDirectory + @"DriversApplication\msedgedriver.exe";
+            //driver = new EdgeDriver(service);
             driver.Navigate().GoToUrl(@"https://passport.jd.com/new/login.aspx");
             driver.FindElement(By.LinkText("账户登录")).Click();
             driver.FindElement(By.Id("loginname")).SendKeys("love13142nan");
@@ -34,25 +34,27 @@ namespace AutoBuyer
 
         public void ToClick()
         {
-            driver.FindElement(By.XPath(@"//*[@id='J_babelOptPage']/div/div[7]/div/div/a")).Click();
-        }
-
-        public void sss2()
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(1));
 
             try
             {
-                IWebElement webElement = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.ClassName("close-button")));
-                if (webElement.Displayed == true)
+                IWebElement element = driver.FindElement(By.XPath(@"//*[@id='J_babelOptPage']/div/div[7]/div/div/a"));
+                if (element != null)
                 {
-                    driver.FindElement(By.ClassName("close-button")).Click();
+                    element.Click();
+
+                    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(1));
+
+                    IWebElement webElement = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.ClassName("close-button")));
+                    if (webElement.Displayed == true)
+                    {
+                        driver.FindElement(By.ClassName("close-button")).Click();
+                    }
                 }
             }
             catch (Exception)
             {
-
             }
+
         }
 
         public void Close()

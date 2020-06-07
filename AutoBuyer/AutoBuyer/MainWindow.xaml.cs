@@ -22,51 +22,28 @@ namespace AutoBuyer
     /// </summary>
     public partial class MainWindow : Window
     {
-        PhoneBuyer buyer;
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click_3Async(object sender, RoutedEventArgs e)
         {
-            buyer = new PhoneBuyer();
-            buyer.Login();
+            JDBuyer.ToNavigate();
+            await new BuyerQuartz().CreateAJobAsync();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            buyer.ToNavigate();
-            buyer.ToClick();
+            JDBuyer.Login();
         }
-
         private void Window_Closed(object sender, EventArgs e)
         {
-            buyer.Close();
+            JDBuyer.Close();
             this.Close();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            buyer.ToNavigate();
-            for (int i = 0; i < 10000000; i++)
-            {
-                buyer.ToClick();
-                buyer.sss2();
-            }
-        }
-
-        private void test(object source, ElapsedEventArgs e)
-        {
-            //if (DateTime.Now.Hour == 14 && DateTime.Now.Minute == 59 && DateTime.Now.Second == 57)
-            //{
-
-                
-                //buyer.ToClick();
-                //buyer.sss2();
-                //buyer.ToClick();
-                //buyer.sss2();
-            // }
-        }
     }
 }
